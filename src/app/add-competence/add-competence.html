@@ -1,0 +1,39 @@
+<div class="container my-5">
+  <h3 class="mb-4">Ajouter une compétence</h3>
+
+  <form (ngSubmit)="enregistrerCompetence()">
+    <!-- Nom -->
+    <div class="mb-3">
+      <label class="form-label fw-bold">Nom de la compétence</label>
+      <input type="text" class="form-control" [(ngModel)]="competence.nom" name="nom" required>
+    </div>
+
+    <!-- Description -->
+    <div class="mb-3">
+      <label class="form-label fw-bold">Description</label>
+      <textarea class="form-control" [(ngModel)]="competence.description" name="description" rows="3" required></textarea>
+    </div>
+
+    <!-- Champ pour ajouter une sous-compétence -->
+    <div class="mb-3">
+      <label class="form-label fw-bold">Sous-compétence</label>
+      <div class="input-group">
+        <input type="text" class="form-control" [(ngModel)]="sousCompetenceTemp" name="sousCompetenceTemp" placeholder="Ex: Communication">
+        <button type="button" class="btn btn-outline-primary" (click)="ajouterSousCompetence()">Ajouter</button>
+      </div>
+    </div>
+
+    <!-- Liste des sous-compétences ajoutées -->
+    <div *ngIf="competence.sousCompetences.length > 0" class="mb-3">
+      <label class="form-label fw-bold">Liste des sous-compétences</label>
+      <ul class="list-group">
+        <li *ngFor="let sc of competence.sousCompetences; let i = index" class="list-group-item d-flex justify-content-between align-items-center">
+          {{ sc }}
+          <button type="button" class="btn btn-sm btn-danger" (click)="supprimerSousCompetence(i)">Supprimer</button>
+        </li>
+      </ul>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">Enregistrer</button>
+  </form>
+</div>
