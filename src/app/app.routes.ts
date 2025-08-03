@@ -7,6 +7,8 @@ import {Apprenant} from './dashboard/apprenant/apprenant';
 import {Administrateur} from './dashboard/administrateur/administrateur';
 import {LoginComponent} from './fonctionalite/auth/login/login';
 import {RegisterComponent} from './fonctionalite/auth/register/register';
+import {authGuard} from './Services/auth/auth-guard';
+import {RoleGuard} from './Services/auth/role-guard';
 
 export const routes: Routes = [
   { path: 'competence', component: CompetenceComponent },
