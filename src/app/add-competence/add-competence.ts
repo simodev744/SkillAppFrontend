@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {NgForOf, NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-add-competence',
   imports: [
-    FormsModule
+    FormsModule,
+    NgForOf,
+    NgIf
   ],
   templateUrl: './add-competence.html',
   styleUrl: './add-competence.css'
@@ -32,6 +35,6 @@ export class AddCompetence {
 
   enregistrerCompetence() {
     console.log('✅ Compétence à enregistrer :', this.competence);
-    // Ici tu peux envoyer à un service backend
+
   }
 }

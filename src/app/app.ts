@@ -5,7 +5,7 @@ import {CompetenceComponent} from './competence/competence';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CompetenceComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
